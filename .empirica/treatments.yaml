@@ -1,0 +1,46 @@
+factors:
+  - name: playerCount
+    values:
+      - value: 1
+  - name: categoryOrder
+    values:
+      - value: ASC
+      - value: ACS
+      - value: SAC
+      - value: SCA
+      - value: CAS
+      - value: CSA
+
+treatments:
+  - desc: "Single player, ASC order"
+    factors:
+      playerCount: 1
+      categoryOrder: ASC
+    name: "1-ASC"
+  - desc: "Single player, ACS order"
+    factors:
+      playerCount: 1
+      categoryOrder: ACS
+    name: "1-ACS"
+  - desc: "Single player, SAC order"
+    factors:
+      playerCount: 1
+      categoryOrder: SAC
+    name: "1-SAC"
+  - desc: "Single player, SCA order"
+    factors:
+      playerCount: 1
+      categoryOrder: SCA
+    name: "1-SCA"
+  - desc: "Single player, CAS order"
+    factors:
+      playerCount: 1
+      categoryOrder: CAS
+    name: "1-CAS"
+  - desc: "Single player, CSA order"
+    factors:
+      playerCount: 1
+      categoryOrder: CSA
+    name: "1-CSA"
+
+  

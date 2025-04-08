@@ -1,0 +1,9 @@
+name = "websft-solo"
+
+[tajriba.auth]
+srtoken = "YRJMhTLQEjvYSJRW"
+
+[[tajriba.auth.users]]
+name = "Admin"
+username = "admin"
+password = "jTdMldLh"
