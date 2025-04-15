@@ -178,7 +178,7 @@ export function VerbalFluencySolo() {
       }
     }
   }
-
+  
   return (
     <div className="flex flex-col items-center justify-center h-full">
       <h2 className="text-3xl font-bold mb-6">Name as many items as you can: {category}</h2>

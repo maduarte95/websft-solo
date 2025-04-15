@@ -2,7 +2,7 @@ import { ClassicListenersCollector } from "@empirica/core/admin/classic";
 export const Empirica = new ClassicListenersCollector();
 
 const categoryMap = {
-  A: "animals",
+  A: "fruits",
   S: "supermarket items",
   C: "clothing items"
 };
@@ -24,7 +24,7 @@ Empirica.onGameStart(({ game }) => {
     const round = game.addRound({ name: roundName });
     
     // Add stages for this round
-    round.addStage({ name: "VerbalFluencySolo", duration: 180 }); // 3 minutes
+    round.addStage({ name: "VerbalFluencySolo", duration: 30 }); // 180s - 3 minutes
     round.addStage({ name: "SwitchesId", duration: 300 }); 
     // Set the category for this round
     round.set("category", categoryMap[category]);

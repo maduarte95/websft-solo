@@ -43,6 +43,7 @@ export function FinalScoreSummary({ next }) {
       <Alert title="Payment Information">
         <p>
           Please submit the following code to receive your payment:{" "}
+          {/* <strong>NFDV475O</strong> */}
           <strong>C162XOKU</strong>
         </p>
         <p className="pt-1">
