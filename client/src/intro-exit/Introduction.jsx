@@ -7,6 +7,18 @@ export function Introduction({ next }) {
       <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
         Instructions: Item Naming
       </h3>
+
+      {/* Canva Video Embed */}
+      <div style={{position: "relative", width: "100%", height: 0, paddingTop: "56.2500%", paddingBottom: 0, boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)", marginTop: "1.6em", marginBottom: "0.9em", overflow: "hidden", borderRadius: "8px", willChange: "transform"}}>
+        <iframe 
+          loading="lazy" 
+          style={{position: "absolute", width: "100%", height: "100%", top: 0, left: 0, border: "none", padding: 0, margin: 0}}
+          src="https://www.canva.com/design/DAGkJ3uV2bI/lRWl0FBOc_zgwJ6F2IQOFA/watch?embed" 
+          allowFullScreen={true}
+          allow="fullscreen"
+          title="Instructions Video"
+        ></iframe>
+      </div>
       
       <div className="space-y-6">
         <div className="bg-blue-50 p-6 rounded-lg">
@@ -42,7 +54,7 @@ export function Introduction({ next }) {
 
       <div className="mt-8 flex justify-center">
         <Button handleClick={next} autoFocus>
-          Next
+          Continue
         </Button>
       </div>
     </div>
