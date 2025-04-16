@@ -2,7 +2,7 @@ import { ClassicListenersCollector } from "@empirica/core/admin/classic";
 export const Empirica = new ClassicListenersCollector();
 
 const categoryMap = {
-  A: "fruits",
+  A: "animals",
   S: "supermarket items",
   C: "clothing items"
 };
@@ -24,7 +24,7 @@ Empirica.onGameStart(({ game }) => {
     const round = game.addRound({ name: roundName });
     
     // Add stages for this round
-    round.addStage({ name: "VerbalFluencySolo", duration: 180 }); // 180s - 3 minutes
+    round.addStage({ name: "VerbalFluencySolo", duration: 180 });
     round.addStage({ name: "SwitchesId", duration: 300 }); 
     // Set the category for this round
     round.set("category", categoryMap[category]);
@@ -88,9 +88,27 @@ Empirica.onStageEnded(({ stage }) => {
   if (stageName === "VerbalFluencySolo") {
     const round = stage.round;
     const players = stage.currentGame.players;
-      
+
+    // Apply penalty for the last word
     players.forEach(player => {
-      // Ensure words are stored in both player.round and round
+      // Check if there are any words
+      const words = round.get("words") || [];
+      if (words.length > 0) {
+        // Get the last word's timestamp
+        const lastWord = words[words.length - 1];
+        const currentTime = Date.now();
+        const responseDelay = currentTime - lastWord.absoluteTimestamp;
+        
+        // Apply penalty if the last word was submitted more than 20 seconds ago
+        if (responseDelay > 20000) {
+          const delayPoints = Math.floor(responseDelay / 20000);
+          const currentPenalties = player.get("slowResponsePenalties") || 0;
+          player.set("slowResponsePenalties", currentPenalties + delayPoints);
+          console.log(`Final word slow response penalty applied: ${delayPoints} penalties`);
+        }
+      }
+
+    // Ensure words are stored in both player.round and round
       if (player.round.get("words") && !round.get("words")) {
         round.set("words", player.round.get("words"));
       } else if (round.get("words") && !player.round.get("words")) {
