@@ -15,7 +15,7 @@ export function FailedGame({ next }) {
             Thank you for your interest in participating in our study.
           </p>
           <p className="text-xl">
-            We were not able to pair you with a partner, so the experiment could not start at this time.
+            Unfortunately, the experiment could not start at this time.
           </p>
           <p className="text-xl">
           You can either wait for the study to start or end the task now. 
